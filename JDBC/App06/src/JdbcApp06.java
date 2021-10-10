@@ -8,7 +8,8 @@ public class JdbcApp06 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		BufferedReader br=null;
+		Statement st=null;
 		Connection con=null;
 	
 		try {
@@ -16,11 +17,11 @@ public class JdbcApp06 {
 			con =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "123");
 			System.out.println("-----------CONNECTION SUCCESFULL---------------");
 			st =con.createStatement();
-			br= new BufferedReader(new InputStreamReader(System.in)) ;
-		
-			System.out.println("Enter Bonus Amt");
-			float bonusAmt=Float.parseFloat(br.readLine());
-		System.out.println("update emp1 set salary=salary+"+bonusAmt+" where salary>500 ");
+//			br= new BufferedReader(new InputStreamReader(System.in)) ;
+//		
+//			System.out.println("Enter Bonus Amt");
+//			float bonusAmt=Float.parseFloat(br.readLine());
+//		System.out.println("update emp1 set salary=salary+"+bonusAmt+" where salary>500 ");
 	boolean rowCount =st.execute("update emp1 set salary=salary+100 where salary>500");
 			System.out.println(rowCount);
 				System.out.println("------------Successfull----------");
